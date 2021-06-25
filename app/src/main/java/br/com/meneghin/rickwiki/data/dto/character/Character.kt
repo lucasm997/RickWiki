@@ -1,4 +1,4 @@
-package br.com.meneghin.rickwiki.data.character
+package br.com.meneghin.rickwiki.data.dto.character
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

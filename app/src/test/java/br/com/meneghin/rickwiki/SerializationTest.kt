@@ -1,10 +1,10 @@
 package br.com.meneghin.rickwiki
 
-import br.com.meneghin.rickwiki.data.ResponseInfo
-import br.com.meneghin.rickwiki.data.character.Character
-import br.com.meneghin.rickwiki.data.character.CharacterLocation
-import br.com.meneghin.rickwiki.data.episode.Episode
-import br.com.meneghin.rickwiki.data.location.Location
+import br.com.meneghin.rickwiki.data.dto.ResponseInfo
+import br.com.meneghin.rickwiki.data.dto.character.Character
+import br.com.meneghin.rickwiki.data.dto.character.CharacterLocation
+import br.com.meneghin.rickwiki.data.dto.episode.Episode
+import br.com.meneghin.rickwiki.data.dto.location.Location
 import kotlinx.serialization.json.Json
 import org.junit.Test
 
