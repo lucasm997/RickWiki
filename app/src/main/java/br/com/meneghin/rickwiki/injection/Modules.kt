@@ -1,6 +1,7 @@
 package br.com.meneghin.rickwiki.injection
 
 
+import br.com.meneghin.rickwiki.data.dto.character.Character
 import br.com.meneghin.rickwiki.data.network.API_URL
 import br.com.meneghin.rickwiki.data.network.RickService
 import br.com.meneghin.rickwiki.data.repository.CharacterRepositoryImpl
@@ -14,8 +15,8 @@ import br.com.meneghin.rickwiki.domain.usecase.GetCharactersByPage
 import br.com.meneghin.rickwiki.domain.usecase.GetEpisodesByPage
 import br.com.meneghin.rickwiki.domain.usecase.GetLocationsByPage
 import br.com.meneghin.rickwiki.ui.CharacterPagingSource
-import br.com.meneghin.rickwiki.ui.recyclerview.CharactersAdapter
-import br.com.meneghin.rickwiki.ui.viewmodel.CharactersViewModel
+import br.com.meneghin.rickwiki.ui.viewmodel.CharacterListViewModel
+import br.com.meneghin.rickwiki.ui.viewmodel.CharacterViewModel
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.json.Json
@@ -98,12 +99,14 @@ val presentationModule = module {
     factory { CharacterPagingSource(get())  }
 
     viewModel {
-        CharactersViewModel(
+        CharacterListViewModel(
             contextProvider = get(),
             getCharacterByPage = get(),
             source = get()
         )
     }
+    viewModel { (c: Character) -> CharacterViewModel(c) }
+
 }
 
 val presentationModules = listOf(presentationModule)

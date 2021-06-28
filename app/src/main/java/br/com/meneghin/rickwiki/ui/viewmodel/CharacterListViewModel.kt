@@ -10,7 +10,7 @@ import br.com.meneghin.rickwiki.ui.CharacterPagingSource
 import kotlinx.coroutines.flow.Flow
 
 
-class CharactersViewModel(
+class CharacterListViewModel(
     private val contextProvider: CoroutineContextProvider,
     private val getCharacterByPage: GetCharactersByPage,
     private val source: CharacterPagingSource

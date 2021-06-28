@@ -25,4 +25,4 @@ data class Character(
     val image: String,
     @SerialName(value = "episode")
     val episode: List<String>
-)
+) :java.io.Serializable
